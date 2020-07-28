@@ -52,7 +52,7 @@
 ;(load-theme 'misterioso t)
 
 ;; ツールバーを表示しない
-(tool-bar-mode 0)
+;(tool-bar-mode 0)
 
 ;; タイトルバーにバッファ名を表示
 (setq frame-title-format "%b")
@@ -95,18 +95,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; mode
 ; markdown
-(load "markdown-mode")
+;(load "markdown-mode")
 
-(setq auto-mode-alist
-      (append '(("\\.md$" . markdown-mode)) auto-mode-alist)
-      )
+;(setq auto-mode-alist
+;      (append '(("\\.md$" . markdown-mode)) auto-mode-alist)
+;      )
 
 ; haskell-mode
 ; run % make EMACS=/Applications/Emacs.app/Contents/MacOS/EMACS
-(add-to-list 'load-path "~/.emacs.d/site-lisp/haskell-mode/")
-(require 'haskell-mode-autoloads)
-(add-to-list 'Info-default-directory-list "~/.emacs.d/site-lisp/haskell-mode/")
-(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+;(add-to-list 'load-path "~/.emacs.d/site-lisp/haskell-mode/")
+;(require 'haskell-mode-autoloads)
+;(add-to-list 'Info-default-directory-list "~/.emacs.d/site-lisp/haskell-mode/")
+;(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
 
 ; migemo
 ;(require 'migemo)
@@ -120,29 +120,29 @@
 ;(migemo-init)
 
 ; golang
-(require 'go-mode-autoloads)
-(setq auto-mode-alist
-      (append '(("\\.go$" . go-mode)) auto-mode-alist)
-      )
+;(require 'go-mode-autoloads)
+;(setq auto-mode-alist
+;      (append '(("\\.go$" . go-mode)) auto-mode-alist)
+;      )
 
 ; Dart
-(require 'dart-mode)
-(add-to-list 'auto-mode-alist '("\\.dart\\'" . dart-mode))
+;(require 'dart-mode)
+;(add-to-list 'auto-mode-alist '("\\.dart\\'" . dart-mode))
 
 ; web-mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-  (setq web-mode-attr-indent-offset nil)
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-  (setq web-mode-sql-indent-offset 2)
-  (setq indent-tabs-mode nil)
-  (setq tab-width 2))
-(add-hook 'web-mode-hook 'my-web-mode-hook)
+;(require 'web-mode)
+;(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+;(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+;(defun my-web-mode-hook ()
+;  "Hooks for Web mode."
+;  (setq web-mode-attr-indent-offset nil)
+;  (setq web-mode-markup-indent-offset 2)
+;  (setq web-mode-css-indent-offset 2)
+;  (setq web-mode-code-indent-offset 2)
+;  (setq web-mode-sql-indent-offset 2)
+;  (setq indent-tabs-mode nil)
+;  (setq tab-width 2))
+;(add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; for Mac OS Notification Center
@@ -176,16 +176,16 @@
 ;;; color-theme-modern
 ; screen shots
 ; https://github.com/emacs-jp/replace-colorthemes/blob/master/screenshots.md
-(load-theme 'blue-mood t t)
-(enable-theme 'blue-mood)
-(custom-set-variables
+;(load-theme 'blue-mood t t)
+;(enable-theme 'blue-mood)
+;(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (ddskk ripgrep graphql-mode yaml-mode rust-mode plantuml-mode magit color-theme-modern anything))))
+; '(package-selected-packages
+;   (quote
+;    (ddskk ripgrep graphql-mode yaml-mode rust-mode plantuml-mode magit color-theme-modern anything))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
