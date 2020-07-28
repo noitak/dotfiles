@@ -1,0 +1,4 @@
+export HISTSIZE=100000
+export HISTFILESIZE=100000000
+export HISTCONTROL=ignoredups
+export PATH=$PATH:~/bin
