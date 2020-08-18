@@ -1,2 +1,5 @@
 .emacs.d/backup/
 .emacs.d/eshell/
+.emacs.d/auto-save-list/
+.emacs.d/elpa/
+.emacs.d/transient/

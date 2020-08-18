@@ -15,6 +15,44 @@
   `((".*", (expand-file-name "~/.emacs.d/backup/") t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'package)
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")
+        ("gnu" . "https://elpa.gnu.org/packages/")))
+
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+
+;; パッケージ情報の更新
+(package-refresh-contents)
+
+;; インストールするパッケージ
+(defvar my/favorite-packages
+  '(
+    ;;;; for auto-complete
+    auto-complete fuzzy popup pos-tip
+    ;;;; buffer utils
+    popwin elscreen yascroll buffer-move
+    ;;;; flymake
+    flycheck flymake-jslint
+    ;;;; git
+    magit git-gutter
+
+    color-theme-modern
+    ddskk
+    ))
+
+;; my/favorite-packagesからインストールしていないパッケージをインストール
+(dolist (package my/favorite-packages)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 表示
 ;; Window size
 (if (boundp 'window-system)
@@ -47,9 +85,12 @@
                     :height 120)
 (setq-default line-spacing 0.2)
 
+;;; color-theme-modern
+; screen shots
+; https://github.com/emacs-jp/replace-colorthemes/blob/master/screenshots.md
+(load-theme 'misterioso t)
+(enable-theme 'misterioso)
 
-;; Theme
-;(load-theme 'misterioso t)
 
 ;; ツールバーを表示しない
 ;(tool-bar-mode 0)
@@ -164,20 +205,7 @@
   (notification-center (format "Open '%s'" (buffer-name))))
 (add-hook 'find-file-hook 'my/find-file-hook)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
-(package-initialize)
 
-;;; color-theme-modern
-; screen shots
-; https://github.com/emacs-jp/replace-colorthemes/blob/master/screenshots.md
-;(load-theme 'blue-mood t t)
-;(enable-theme 'blue-mood)
 ;(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -255,3 +283,11 @@
   (setq default-input-method "japanese-skk")
   (require 'skk-study))
 (setq skk-large-jisyo "~/.emacs.d/SKK-JISYO.L")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ddskk color-theme-modern git-gutter magit flymake-jslint flycheck buffer-move yascroll elscreen popwin pos-tip fuzzy auto-complete))))
