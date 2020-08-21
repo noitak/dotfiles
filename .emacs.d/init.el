@@ -45,6 +45,7 @@
 
     color-theme-modern
     ddskk
+    graphql-mode
     ))
 
 ;; my/favorite-packagesからインストールしていないパッケージをインストール
