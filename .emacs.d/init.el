@@ -46,6 +46,11 @@
     color-theme-modern
     ddskk
     graphql-mode
+    dockerfile-mode
+    docker-compose-mode
+    typescript-mode
+    clojure-mode
+    web-mode
     ))
 
 ;; my/favorite-packagesからインストールしていないパッケージをインストール
@@ -291,4 +296,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ddskk color-theme-modern git-gutter magit flymake-jslint flycheck buffer-move yascroll elscreen popwin pos-tip fuzzy auto-complete))))
+    (web-mode clojure-mode dockerfile-mode typescript-mode docker-compose-mode ddskk color-theme-modern git-gutter magit flymake-jslint flycheck buffer-move yascroll elscreen popwin pos-tip fuzzy auto-complete))))
