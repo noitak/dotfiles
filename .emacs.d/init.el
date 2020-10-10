@@ -193,23 +193,24 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; for Mac OS Notification Center
-(defvar notification-center-title "Emacs")
+(when (equal system-type 'darwin)
+  (defvar notification-center-title "Emacs")
 
-(defun notification-center (msg)
-  (let ((tmpfile (make-temp-file "notification-center")))
-   (with-temp-file tmpfile
-     (insert
-      (format "display notification \"%s\" with title \"%s\""
-              msg notification-center-title)))
-   (unless (zerop (call-process "osascript" tmpfile))
-     (message "Failed: Call AppleScript"))
-   (delete-file tmpfile)))
-;(notification-center "我が友「Emacs」")
+  (defun notification-center (msg)
+    (let ((tmpfile (make-temp-file "notification-center")))
+      (with-temp-file tmpfile
+	(insert
+	 (format "display notification \"%s\" with title \"%s\""
+		 msg notification-center-title)))
+      (unless (zerop (call-process "osascript" tmpfile))
+	(message "Failed: Call AppleScript"))
+      (delete-file tmpfile)))
 
-;; ファイル名を開いたときにそれを通知する
-(defun my/find-file-hook ()
-  (notification-center (format "Open '%s'" (buffer-name))))
-(add-hook 'find-file-hook 'my/find-file-hook)
+  ;; ファイル名を開いたときにそれを通知する
+  (defun my/find-file-hook ()
+    (notification-center (format "Open '%s'" (buffer-name))))
+  (add-hook 'find-file-hook 'my/find-file-hook)
+  )
 
 
 ;(custom-set-variables
