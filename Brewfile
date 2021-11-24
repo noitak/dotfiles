@@ -23,10 +23,11 @@ cask "karabiner-elements"
 cask "miro"
 cask "multipass"
 cask "visual-studio-code"
+cask "zoom"
 
 mas "BetterSnapTool", id: 417375580
 #mas "Leawo Blu-ray Player"
-mas "OneDrive", id: 823766827
-mas "Xcode", id: 497799835
+#mas "OneDrive", id: 823766827
+#mas "Xcode", id: 497799835
 mas "Display Menu", id: 549083868
-
+mas "Slack for Desktop", id:803453959
