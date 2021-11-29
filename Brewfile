@@ -31,3 +31,4 @@ mas "BetterSnapTool", id: 417375580
 #mas "Xcode", id: 497799835
 mas "Display Menu", id: 549083868
 mas "Slack for Desktop", id:803453959
+mas "Microsoft Excel", id:462058435
