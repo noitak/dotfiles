@@ -19,8 +19,11 @@ cask "dropbox"
 cask "emacs"
 cask "firefox"
 cask "google-chrome"
+cask "google-drive"
 cask "google-japanese-ime"
 cask "karabiner-elements"
+cask "obsidian"
+#cask "processing"
 cask "miro"
 cask "multipass"
 cask "parallels"
@@ -34,3 +37,4 @@ mas "BetterSnapTool", id: 417375580
 mas "Display Menu", id: 549083868
 mas "Slack for Desktop", id:803453959
 mas "Microsoft Excel", id:462058435
+mas "Microsoft Word", id:462054704
