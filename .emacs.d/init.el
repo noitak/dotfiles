@@ -72,8 +72,8 @@
 ;                   '(cursor-type      . box)      ; カーソルの形状
                    '(top . 0) ; ウィンドウの表示位置（Y座標）
                    '(left . 0) ; ウィンドウの表示位置（X座標）
-                   '(width . 80) ; ウィンドウの幅（文字数）
-                   '(height . 48) ; ウィンドウの高さ（文字数）
+                   '(width . 150) ; ウィンドウの幅（文字数）
+                   '(height . 80) ; ウィンドウの高さ（文字数）
                    )
                   default-frame-alist)))
 (setq initial-frame-alist default-frame-alist )
@@ -94,8 +94,11 @@
 ;;; color-theme-modern
 ; screen shots
 ; https://github.com/emacs-jp/replace-colorthemes/blob/master/screenshots.md
-(load-theme 'misterioso t)
-(enable-theme 'misterioso)
+;(load-theme 'misterioso t)
+;(enable-theme 'misterioso)
+
+(load-theme 'dracula t)
+(enable-theme 'dracula)
 
 
 ;; ツールバーを表示しない
@@ -296,5 +299,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (web-mode clojure-mode dockerfile-mode typescript-mode docker-compose-mode ddskk color-theme-modern git-gutter magit flymake-jslint flycheck buffer-move yascroll elscreen popwin pos-tip fuzzy auto-complete))))
+   '(dracula-theme web-mode clojure-mode dockerfile-mode typescript-mode docker-compose-mode ddskk color-theme-modern git-gutter magit flymake-jslint flycheck buffer-move yascroll elscreen popwin pos-tip fuzzy auto-complete)))
+
+
+
+(defun flush-empty-lines () (interactive) (flush-lines "^$"))

@@ -9,6 +9,8 @@ brew "ffmpeg"
 brew "mas"
 brew "ripgrep"
 brew "tree"
+brew "graphviz"
+brew "plantuml"
 
 cask "affinity-designer"
 cask "affinity-photo"
